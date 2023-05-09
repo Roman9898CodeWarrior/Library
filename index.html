@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Library</title>
+      <link
+        href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link rel="stylesheet" href="styles/normalize.css"/>
+      <link rel="stylesheet" href="styles/style.css"/>
+
+  </head>
+  <body>
+      
+    <div class="container">
+
+      <heder class="library-header">
+
+          <h1>Library</h1>
+
+          <button class="sign">Sign in</button>
+
+      </heder>
+
+
+
+      <div class="content">
+
+        <div class="books">
+
+          <div class="books-adding">
+
+            <div class="new-book">
+
+              <div class="new-book-item">
+                <label for="name">Book</label>
+                <input type="text" class="new-book-input" id="name"/>
+              </div>
+
+              <div class="new-book-item">
+                <label for="author">Author</label>
+                <input type="text" class="new-book-input" id="author"/>
+              </div>
+
+              <div class="new-book-item">
+                <label for="pages">Pages</label>
+                <input type="text" class="new-book-input" id="pages"/>
+              </div>
+
+              <div class="new-book-item">
+                <label for="status">Status</label>
+                <select class="stat "name="status" id="status">
+                  <option value="read">Read</option>
+                  <option value="not read">Not read</option>
+                </select>
+              </div>
+
+            </div>
+
+            <button class="bnt add-book">Add book</button>
+
+          </div>
+
+
+          <main class="books-list">
+            <div class="projects">
+              <h3>Your Books</h3>
+              <div class="books-cards">
+                <!-- Section for all project cards -->
+              </div>
+            </div>
+          </main>
+
+        </div>
+
+
+        <div class="information">
+
+          <div class="info">
+
+            <h2 class="info-header">Information</h2>
+
+            <div class="info-blocks">
+
+              <div class="info-block">
+                  <div class="books-t">Books</div>
+                  <div class="books-t-number">0</div>
+              </div>
+
+              <div class="info-block">
+                  <div class="books-r">Books read</div>
+                  <div class="books-r-number">0</div>
+              </div>
+
+              <div class="info-block">
+                  <div class="pages-r">Pages read</div>
+                  <div class="pages-r-number">0</div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="options">
+
+            <h2 class="options-header">Storage Options</h2> 
+
+            <button class="options-button">Delete Storage</button>
+
+          </div>
+
+        </div>
+        
+      </div>
+
+    </div>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
