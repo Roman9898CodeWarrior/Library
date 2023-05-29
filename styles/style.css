@@ -11,6 +11,7 @@
     height: 100px;
     background-color:darkslateblue;
     background-color:mediumpurple;
+    z-index: 3;
 }
 h1 {
     font-size: 42px;
@@ -33,6 +34,7 @@ h2 {
     background-color:indigo;
 }
 .content {
+    position: relative;
     display: grid;
     grid-template-columns: 3fr 1fr;
     /* font-size: 1.5em; */
@@ -44,7 +46,7 @@ h2 {
 .books {
     height: 100vh;
 }
-.books-adding {
+.add-book-form {
     padding: 30px;
 }
 .new-book {
@@ -52,12 +54,25 @@ h2 {
     display: flex;
     justify-content: space-between;
 }
+.add-book {
+    background-color: cyan;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0.5rem 1.8rem;
+    border-radius: 7px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    border-image: initial;
+    margin-top: 20px;
+}
 .new-book-item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.new-book-input {
+.modal-form-input {
     height: 38px;
     padding: 6px 10px;
     background-color: #fff;
@@ -93,13 +108,15 @@ h2 {
     background-color: #33C3F0;
     border-color: #33C3F0;
 }
-/* .books-list {
-    padding: 30px;
-} */
 .information {
+    position: fixed;
     height: 100vh;
+    padding-top: 100px;
     background-color:cyan;
     text-align: center;
+    top: 0;
+    right: 0;
+    z-index: -2;
 }
 .info {
     margin: 20px;
@@ -132,7 +149,6 @@ h2 {
 
 
 .books-list {
-    background-color: var(--content-gray);
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: min-content 1fr;
@@ -174,22 +190,95 @@ h2 {
     z-index: 0;
 }
 .book-title {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
     font-style: oblique;
     text-decoration: underline 0.15rem;
     color: #222;
+    margin: 5px 20px;
 }
 .book-author {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
     color: #222;
+    margin: 5px 20px;
+
 }
 .book-pages {
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
     color: #222;
+    margin: 5px 20px;
+}
+.book-read {
+    display: flex;
+    align-items: center;
+}
+.book-read > input {
+    cursor: pointer;
+}
+.book-read-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-right: 5px;
+    color: #222;
+    margin: 5px 20px;
+}
+.read-checked {
+    border-left: 10px solid rgb(18, 157, 0) !important;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 8px;
+height: 25px;
+width: 25px;
+background-color: rgba(44, 66, 164, 0.198);
+}
+
+.container:hover input ~ .checkmark {
+background-color: var(--drawer-color);
+}
+
+.container input:checked ~ .checkmark {
+background-color: var(--blue-1);
+}
+
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+display: block;
+}
+
+.container .checkmark:after {
+left: 9px;
+top: 5px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+.book > button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: white;
+    cursor: pointer;
+    font-weight: 900;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
 }

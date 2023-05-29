@@ -32,30 +32,46 @@
 
         <div class="books">
 
-          <div class="books-adding">
+          <form class="add-book-form">
 
             <div class="new-book">
 
-              <div class="new-book-item">
-                <label for="name">Book</label>
-                <input type="text" class="new-book-input" id="name"/>
+              <div class="modal-input-field">
+                <label for="book-title">Title</label>
+                <input
+                type="text"
+                name="book-title"
+                id="book-title"
+                class="modal-form-input"
+              />
               </div>
 
-              <div class="new-book-item">
-                <label for="author">Author</label>
-                <input type="text" class="new-book-input" id="author"/>
+              <div class="modal-input-field">
+                <label for="book-author">Author</label>
+              <input
+                type="text"
+                name="book-author"
+                id="book-author"
+                class="modal-form-input"
+              />
               </div>
 
-              <div class="new-book-item">
-                <label for="pages">Pages</label>
-                <input type="text" class="new-book-input" id="pages"/>
+              <div class="modal-input-field">
+                <label for="book-pages">Pages</label>
+              <input
+                type="number"
+                min="0"
+                name="book-pages"
+                id="book-pages"
+                class="modal-form-input"
+              />
               </div>
 
-              <div class="new-book-item">
+              <div class="modal-input-field">
                 <label for="status">Status</label>
                 <select class="stat "name="status" id="status">
-                  <option value="read">Read</option>
                   <option value="not read">Not read</option>
+                  <option value="read">Read</option>
                 </select>
               </div>
 
@@ -63,7 +79,7 @@
 
             <button class="bnt add-book">Add book</button>
 
-          </div>
+          </form>
 
 
           <main class="books-list">
@@ -88,17 +104,12 @@
 
               <div class="info-block">
                   <div class="books-t">Books</div>
-                  <div class="books-t-number">0</div>
+                  <div class="books-t-number"></div>
               </div>
 
               <div class="info-block">
                   <div class="books-r">Books read</div>
                   <div class="books-r-number">0</div>
-              </div>
-
-              <div class="info-block">
-                  <div class="pages-r">Pages read</div>
-                  <div class="pages-r-number">0</div>
               </div>
 
             </div>
